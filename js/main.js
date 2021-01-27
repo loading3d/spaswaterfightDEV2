@@ -227,6 +227,24 @@ function createTank(scene, data) {
         var force = new BABYLON.Vector3(fVector.x * 100 , (fVector.y+ .1) * 100 , fVector.z * 100);
         cannonBall.physicsImpostor.applyImpulse(force, cannonBall.getAbsolutePosition());
 
+
+        cannonBall.actionManager = new BABYLON.ActionManager(scene);
+
+        enemies.forEach(function(enemy)
+        {
+            cannonBall.actionManager.registerAction(new BABYLON.ExecuteCodeAction(
+        {
+            trigger: BABYLON.ActionManager.OnIntersectionEnterTrigger,
+            parameter : enemy
+            },
+        function () {
+            console.log("enemy hit");
+        }
+        ));
+
+        });
+
+
         setTimeout(function () {            
             cannonBall.dispose();
         }, 3000);
