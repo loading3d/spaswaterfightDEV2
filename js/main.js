@@ -236,16 +236,6 @@ function createTank(scene, data) {
         
         cannonBall.actionManager = new BABYLON.ActionManager(scene);
 
-        cannonBall.actionManager.registerAction(new BABYLON.ExecuteCodeAction(
-        {
-            trigger: BABYLON.ActionManager.OnIntersectionEnterTrigger,
-            parameter : enemies
-        },
-        function () {
-            console.log("enemy hit");
-        }
-        ));
-/*
         enemies.forEach(function(enemy)
         {            
             console.log(enemy);
@@ -259,7 +249,6 @@ function createTank(scene, data) {
             }
             ));
         });
-*/
 
         setTimeout(function () {            
             cannonBall.dispose();
@@ -271,7 +260,6 @@ function createTank(scene, data) {
     
     return tank;
 }
-
 
 function enemyFire(positionPrimitives)
 {
