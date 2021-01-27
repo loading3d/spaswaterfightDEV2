@@ -228,7 +228,12 @@ function createTank(scene, data) {
         cannonBall.physicsImpostor.applyImpulse(force, cannonBall.getAbsolutePosition());
 
 
-        console.log(enemies);
+        //if (balloon1.intersectsMesh(plan1, false)) {
+                //console.log("1");
+        //} else {
+                //console.log("2");
+        //}
+        
         cannonBall.actionManager = new BABYLON.ActionManager(scene);
 
         enemies.forEach(function(enemy)
