@@ -228,6 +228,7 @@ function createTank(scene, data) {
         cannonBall.physicsImpostor.applyImpulse(force, cannonBall.getAbsolutePosition());
 
 
+        console.log(enemies);
         cannonBall.actionManager = new BABYLON.ActionManager(scene);
 
         enemies.forEach(function(enemy)
