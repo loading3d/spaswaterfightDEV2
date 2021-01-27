@@ -231,17 +231,17 @@ function createTank(scene, data) {
         cannonBall.actionManager = new BABYLON.ActionManager(scene);
 
         enemies.forEach(function(enemy)
-        {
+        {            
+            console.log(enemy);
             cannonBall.actionManager.registerAction(new BABYLON.ExecuteCodeAction(
-        {
-            trigger: BABYLON.ActionManager.OnIntersectionEnterTrigger,
-            parameter : enemy
+            {
+                trigger: BABYLON.ActionManager.OnIntersectionEnterTrigger,
+                parameter : enemy
             },
-        function () {
-            console.log("enemy hit");
-        }
-        ));
-
+            function () {
+                console.log("enemy hit");
+            }
+            ));
         });
 
 
